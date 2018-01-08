@@ -5,7 +5,7 @@ import scala.io.Source
 
 object Day2 {
 
-  def input = Source.fromFile("day2.txt").getLines()
+  def input = Source.fromFile("data/Year2015/day2.txt").getLines()
 
   val regExp = """(\d*?)x(\d*?)x(\d*?)""".r
 
@@ -41,7 +41,7 @@ object Day2 {
           val w = wS.toInt
           val l = lS.toInt
           val h = hS.toInt
-      
+
           val wl = 2 * w + 2 * l
           val wh = 2 * w + 2 * h
           val lh = 2 * l + 2 * h

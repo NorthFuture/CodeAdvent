@@ -35,6 +35,12 @@ object Day3 extends App {
   class CenteredMatrix[T](size: Int, defaultValue: T)(implicit evidence$10: scala.reflect.ClassTag[T]) {
     val array: Array[Array[T]] = Array.fill(size, size)(defaultValue)
 
+    def update(r: Int, c: Int, value: T) = setCell(r, c, value)
+
+    def apply(r: Int, c: Int) = getCell(r, c)
+
+    def apply(pos: (Int, Int)) = getCell(pos._1, pos._2)
+
     def getCell(r: Int, c: Int): T = {
       array(-r + size / 2)(c + size / 2)
     }
@@ -44,7 +50,7 @@ object Day3 extends App {
     }
 
     def print(printWidth: Int, format: String) = {
-      val r = array.drop(size / 2 - printWidth).take(printWidth * 2).map(_.drop(size / 2 - printWidth).take(printWidth * 2).map(_.formatted("%4d")).mkString(" ")).mkString("\n")
+      val r = array.drop(size / 2 - printWidth).take(printWidth * 2).map(_.drop(size / 2 - printWidth).take(printWidth * 2).map(_.formatted(format)).mkString(" ")).mkString("\n")
 
       println(r)
     }

@@ -1,10 +1,8 @@
+def part2() = {
+  def isPrime(n: Int) = (2 to math.sqrt(n).toInt) forall (n % _ != 0)
 
-
-
-val s = Seq(1, 2, 3, 4, 5)
-
-val x = Seq(1, 2, 10, 11)
-
-(s ++ x) collect {
-  case i if !s.contains(i) => i
+  var cnt = 0
+  for (candidate <- 106700 to (17000+106700) by 17)
+    if (!isPrime(candidate)) cnt += 1
+  cnt
 }
