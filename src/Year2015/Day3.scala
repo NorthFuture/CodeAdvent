@@ -1,7 +1,4 @@
-package codeadvent
-
-import scala.annotation.tailrec
-import scala.Vector
+package Year2015
 
 object Day3 {
 

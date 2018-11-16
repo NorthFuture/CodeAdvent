@@ -1,11 +1,8 @@
 
-package codeadvent
+package Year2015
 
-import scala.io.Source
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 import scala.collection.mutable.HashMap
-import scala.util.Try
+import scala.io.Source
 
 object Day7 {
 

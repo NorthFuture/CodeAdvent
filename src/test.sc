@@ -1,8 +1,32 @@
-def part2() = {
-  def isPrime(n: Int) = (2 to math.sqrt(n).toInt) forall (n % _ != 0)
+import scala.annotation.tailrec
+import scala.collection.mutable
 
-  var cnt = 0
-  for (candidate <- 106700 to (17000+106700) by 17)
-    if (!isPrime(candidate)) cnt += 1
-  cnt
+val a = List(0, 1, 2, 3, 4, 5)
+
+
+@tailrec
+def combineSingle(pre: Seq[Int], post: Seq[Int], result: Seq[(Int, Seq[Int])]): Seq[(Int, Seq[Int])] = {
+
+  post match {
+    case Nil => result
+    case h :: tail =>
+      combineSingle(pre :+ h, tail, result :+ ((h, pre ++ tail)))
+  }
 }
+
+def combine(list: Seq[Int], count: Int): Seq[Seq[Int]] = {
+
+  if (count == 1) {
+    list.sliding(1).toSeq
+  } else {
+
+    val o: Seq[(Int, Seq[Int])] = combineSingle(List(), list, Seq())
+
+    o.flatMap(x => {
+      combine(x._2, count - 1).map(y => x._1 :: Nil ++ y)
+    })
+  }
+
+}
+
+combine(a, 3)
