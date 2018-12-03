@@ -92,4 +92,3 @@ object CapraCavoloLupo extends App with Benchmark {
 
   Thread.sleep(1000)
 }
-

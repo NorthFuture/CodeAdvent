@@ -45,8 +45,11 @@ object Day1 extends App {
     streamFromIterator(inputGetter) #::: recursiveStream(inputGetter)
   }
 
-  println(solvePart1(streamFromIterator(getInput)))
 
-  println(solvePart2(recursiveStream(getInput)))
+
+    println(solvePart1(streamFromIterator(getInput)))
+
+    println(solvePart2(recursiveStream(getInput)))
+
 }
 

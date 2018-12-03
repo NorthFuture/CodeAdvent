@@ -1,4 +1,3 @@
-
 trait Benchmark {
 
   def benchmark[T](x: => T): T = {
