@@ -2,6 +2,7 @@ package Year2018
 
 import java.time.{OffsetDateTime, ZoneOffset}
 
+import scala.annotation.tailrec
 import scala.io.Source
 
 object Day4 extends App {
@@ -30,6 +31,7 @@ object Day4 extends App {
   }.toList
     .sortBy(_.date)
 
+  @tailrec
   def solveStrategy1(guardOnDuty: Int, lastTime: OffsetDateTime, input: List[State], sleepMinutes: Map[Int, Int], minutesAsleep: Map[(Int, Int), Int]): (Map[Int, Int], Map[(Int, Int), Int]) = {
     input match {
       case Nil =>
