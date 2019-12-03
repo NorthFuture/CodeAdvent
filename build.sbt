@@ -8,3 +8,13 @@ lazy val root = (project in file(".")).
     name := "Advent of Code",
 
   )
+
+/*
+libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.6"
+
+enablePlugins(ScalaJSPlugin)
+
+scalaJSUseMainModuleInitializer := true
+
+mainClass in Compile := Some("Year2018.Day10")
+*/
